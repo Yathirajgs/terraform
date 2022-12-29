@@ -1,0 +1,30 @@
+module "ec2_instance" {
+  source     = "git::https://github.com/easyawslearn/Terraform-Tutorial.git/EC2withJenkins"
+
+  region        = "us-west-2"
+  key_name      = "ec2-demo"
+  instance_type = "t2.micro"
+
+}
+
+Create a main.tf file to and copy paste the above content to install the jenkins and create a ec2 insatnce, or
+you can git clone all the files and later make the changes according requirements and use the below module.
+
+module "ec2_instance" {
+  source     = "Terraform-Tutorial/EC2withJenkins"
+
+  region        = "us-east-1"
+  key_name      = "ec2-Test1"
+  instance_type = "t2.micro"
+
+}
+
+or 
+
+
+module "ec2_instance" {
+  source     = "terraform_EC2_Jenkins"
+
+  region        = "us-east-1" (your desired region)
+  key_name      = "ec2-Test1" (your desired keypair name)
+  instance_type = "t2.micro" 
